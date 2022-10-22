@@ -44,5 +44,19 @@
         <fileSet>
             <directory>src/test/resources</directory>
         </fileSet>
+        <fileSet>
+            <directory/>
+            <includes>
+                <include>.gitattributes</include>
+                <include>.gitignore</include>
+                <include>ide-config-template.txt</include>
+                <include>LICENSE</include>
+                <include>NOTICE</include>
+                <include>README.md</include>
+
+
+
+            </includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
