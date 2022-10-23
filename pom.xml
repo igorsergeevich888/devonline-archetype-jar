@@ -22,7 +22,7 @@
 
     <groupId>academy.devonline.maven.archetypes</groupId>
     <artifactId>devonline-archetype-jar</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>The devonline-archetype-jar</name>
@@ -91,10 +91,15 @@
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
-                 <configuration>
-                     <addDefaultExcludes>false</addDefaultExcludes>
-                 </configuration>
 
+                    <executions>
+                        <execution>
+                            <id>default-resources</id>
+                            <configuration>
+                                <addDefaultExcludes>false</addDefaultExcludes>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
@@ -117,11 +122,15 @@
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>${maven-archetype-plugin.version}</version>
-                    <configuration>
-                        <useDefaultExcludes>false</useDefaultExcludes>
-                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-jar</id>
+                            <configuration>
+                                <useDefaultExcludes>false</useDefaultExcludes>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
-
             </plugins>
         </pluginManagement>
     </build>
